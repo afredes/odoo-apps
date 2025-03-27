@@ -17,6 +17,7 @@
     'assets': {
         'web.assets_backend': [
             'attachment_counter/static/src/js/attachment_counter.js',
+            'attachment_counter/static/src/css/attachment_counter.css'
         ],
     }
 }
