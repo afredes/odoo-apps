@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="KSGanttView.Row" t-extend="GanttView.Row">
+        <t t-jquery=".o_gantt_pill_title" t-operation="before">
+            <span string=" " class="position-relative o_status mt8 ml4 align-top" t-if="pill.kanban_state == 'normal'"/>
+            <span string=" " class="position-relative o_status o_status_red mt8 ml4 align-top" t-if="pill.kanban_state == 'blocked'"/>
+            <span string=" " class="position-relative o_status o_status_green mt8 ml4 align-top" t-if="pill.kanban_state == 'done'"/>
+        </t>
+        <t t-jquery="*[t-attf-class~='o_gantt_pill']:has(> .o_gantt_pill_title)" t-operation="attributes">
+            <attribute name="t-attf-class" value="d-flex o_gantt_pill position-relative #{!widget.options.isGroup ? pill.decorations.join(' ') : ''}  #{'_color' in pill ? 'o_gantt_color_' + pill._color : ''} #{widget.progressField? 'o_gantt_progress': ''}"/>
+        </t>
+    </t>
+</templates>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="project_task_dependency_view_gantt_inherit" model="ir.ui.view">
+        <field name="name">project.task.view.gantt.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project_enterprise.project_task_dependency_view_gantt"/>
+        <field name="arch" type="xml">
+            <xpath expr="//gantt[1]" position="attributes">
+                <attribute name="js_class">kanban_state_gantt</attribute>
+            </xpath>
+            <xpath expr="//gantt[1]" position="inside">
+                <field name="kanban_state"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
